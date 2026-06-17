@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Google_Sans, Google_Sans_Code } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import { AppHeader } from "@/components/app-header";
 
 const googleSans = Google_Sans({
   variable: "--font-google-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
           "font-sans antialiased flex flex-col bg-background text-foreground overflow-x-hidden",
         )}
       >
+        <AppHeader />
         <main className="size-full bg-transparent min-w-xs mx-auto max-w-7xl">
           {children}
         </main>
