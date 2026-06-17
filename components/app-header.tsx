@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 export function AppHeader() {
   return (
-    <header className="w-full bg-transparent max-w-none">
+    <header className="absolute top-0 left-0 w-full bg-transparent max-w-none">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8">
         <Link href="/" className="leading-7 font-medium text-zinc-800">
           <p>Rizky Ramadhan</p>
