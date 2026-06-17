@@ -3,12 +3,12 @@ import { Google_Sans, Google_Sans_Code } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const geistSans = Google_Sans({
+const googleSans = Google_Sans({
   variable: "--font-google-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Google_Sans_Code({
+const googleSansCode = Google_Sans_Code({
   variable: "--font-google-sans-code",
   subsets: ["latin"],
 });
@@ -24,11 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html  
-      lang="id"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans")}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="id" className="scroll-smooth overflow-y-auto">
+      <body
+        className={cn(
+          googleSans.variable,
+          googleSansCode.variable,
+          "font-sans antialiased flex flex-col bg-background text-foreground overflow-x-hidden",
+        )}
+      >
+        <main className="size-full bg-transparent min-w-xs mx-auto max-w-7xl">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
